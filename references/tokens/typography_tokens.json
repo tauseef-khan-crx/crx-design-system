@@ -1,0 +1,236 @@
+{
+  "fontFamilies": {
+    "title": {
+      "family": "Montserrat",
+      "usage": "Headings, nav, buttons"
+    },
+    "body": {
+      "family": "Noto Sans",
+      "usage": "Body copy, forms"
+    },
+    "mono": {
+      "family": "SF Mono",
+      "usage": "Code, tokens"
+    }
+  },
+  "fontWeights": {
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+    "extrabold": 800
+  },
+  "textStyles": [
+    {
+      "name": "Title/Display",
+      "fontFamily": "Montserrat",
+      "fontWeight": 700,
+      "fontSize": {
+        "desktop": 60,
+        "tablet": 42,
+        "mobile": 36
+      },
+      "lineHeight": "110%",
+      "letterSpacing": "-4%",
+      "textCase": "ORIGINAL",
+      "description": "Hero headlines, major feature titles"
+    },
+    {
+      "name": "Title/H1",
+      "fontFamily": "Montserrat",
+      "fontWeight": 700,
+      "fontSize": {
+        "desktop": 48,
+        "tablet": 36,
+        "mobile": 32
+      },
+      "lineHeight": "112%",
+      "letterSpacing": "-3%",
+      "textCase": "ORIGINAL",
+      "description": "Page titles, primary section headings"
+    },
+    {
+      "name": "Title/H2",
+      "fontFamily": "Montserrat",
+      "fontWeight": 700,
+      "fontSize": {
+        "desktop": 36,
+        "tablet": 28,
+        "mobile": 24
+      },
+      "lineHeight": "115%",
+      "letterSpacing": "-2%",
+      "textCase": "ORIGINAL",
+      "description": "Section headings"
+    },
+    {
+      "name": "Title/H3",
+      "fontFamily": "Montserrat",
+      "fontWeight": 500,
+      "fontSize": {
+        "desktop": 28,
+        "tablet": 24,
+        "mobile": 22
+      },
+      "lineHeight": "130%",
+      "letterSpacing": "-1%",
+      "textCase": "ORIGINAL",
+      "description": "Subsection headings"
+    },
+    {
+      "name": "Title/H4",
+      "fontFamily": "Montserrat",
+      "fontWeight": 500,
+      "fontSize": {
+        "desktop": 22,
+        "tablet": 20,
+        "mobile": 18
+      },
+      "lineHeight": "135%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Card titles, minor headings"
+    },
+    {
+      "name": "Title/H5",
+      "fontFamily": "Montserrat",
+      "fontWeight": 500,
+      "fontSize": {
+        "desktop": 17,
+        "tablet": 16,
+        "mobile": 15
+      },
+      "lineHeight": "140%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Small headings, list titles"
+    },
+    {
+      "name": "Title/Overline",
+      "fontFamily": "Montserrat",
+      "fontWeight": 700,
+      "fontSize": {
+        "desktop": 10,
+        "tablet": 10,
+        "mobile": 10
+      },
+      "lineHeight": "150%",
+      "letterSpacing": "14%",
+      "textCase": "UPPER",
+      "description": "Eyebrow text, category labels"
+    },
+    {
+      "name": "Body/Large",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 400,
+      "fontSize": {
+        "desktop": 17,
+        "tablet": 17,
+        "mobile": 16
+      },
+      "lineHeight": "165%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Lead paragraphs, introductions"
+    },
+    {
+      "name": "Body/Default",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 400,
+      "fontSize": {
+        "desktop": 15,
+        "tablet": 15,
+        "mobile": 15
+      },
+      "lineHeight": "160%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Standard body copy"
+    },
+    {
+      "name": "Body/Small",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 400,
+      "fontSize": {
+        "desktop": 13,
+        "tablet": 13,
+        "mobile": 13
+      },
+      "lineHeight": "155%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Secondary text, descriptions"
+    },
+    {
+      "name": "Body/Caption",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 500,
+      "fontSize": {
+        "desktop": 11,
+        "tablet": 11,
+        "mobile": 11
+      },
+      "lineHeight": "150%",
+      "letterSpacing": "4%",
+      "textCase": "ORIGINAL",
+      "description": "Captions, helper text"
+    },
+    {
+      "name": "Body/Label",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 600,
+      "fontSize": {
+        "desktop": 12,
+        "tablet": 12,
+        "mobile": 12
+      },
+      "lineHeight": "140%",
+      "letterSpacing": "5%",
+      "textCase": "UPPER",
+      "description": "Form labels, section labels"
+    },
+    {
+      "name": "Body/Link",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 500,
+      "fontSize": {
+        "desktop": 15,
+        "tablet": 15,
+        "mobile": 15
+      },
+      "lineHeight": "170%",
+      "letterSpacing": "0%",
+      "textCase": "ORIGINAL",
+      "description": "Inline links, text links"
+    },
+    {
+      "name": "Button/Default",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 600,
+      "fontSize": {
+        "desktop": 15,
+        "tablet": 15,
+        "mobile": 14
+      },
+      "lineHeight": "100%",
+      "letterSpacing": "5%",
+      "textCase": "UPPER",
+      "description": "Standard button text"
+    },
+    {
+      "name": "Button/Small",
+      "fontFamily": "Noto Sans",
+      "fontWeight": 600,
+      "fontSize": {
+        "desktop": 13,
+        "tablet": 13,
+        "mobile": 12
+      },
+      "lineHeight": "100%",
+      "letterSpacing": "5%",
+      "textCase": "UPPER",
+      "description": "Small button text"
+    }
+  ]
+}

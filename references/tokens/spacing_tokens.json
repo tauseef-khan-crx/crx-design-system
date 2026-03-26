@@ -1,0 +1,35 @@
+{
+  "spacing": {
+    "space_0": { "value": 0, "description": "None" },
+    "space_1": { "value": 4, "description": "Icon gap, micro" },
+    "space_2": { "value": 8, "description": "Badge padding" },
+    "space_3": { "value": 12, "description": "Input inner" },
+    "space_4": { "value": 16, "description": "Card padding sm" },
+    "space_5": { "value": 20, "description": "Mobile margin" },
+    "space_6": { "value": 24, "description": "Card padding md" },
+    "space_8": { "value": 32, "description": "Section gap" },
+    "space_10": { "value": 40, "description": "Component spacing" },
+    "space_12": { "value": 48, "description": "Section padding" },
+    "space_16": { "value": 64, "description": "Page sections" },
+    "space_20": { "value": 80, "description": "Hero padding" },
+    "space_24": { "value": 96, "description": "Large feature" }
+  },
+  "borderRadius": {
+    "radius_none": { "value": 0, "description": "No rounding" },
+    "radius_xs": { "value": 4, "description": "Tags, chips" },
+    "radius_sm": { "value": 6, "description": "Inputs" },
+    "radius_md": { "value": 10, "description": "Cards, dropdowns" },
+    "radius_lg": { "value": 16, "description": "Large cards" },
+    "radius_xl": { "value": 24, "description": "Hero sections" },
+    "radius_2xl": { "value": 32, "description": "Modals" },
+    "radius_pill": { "value": 999, "description": "Pill shapes (avatars, tags)" },
+    "radius_full": { "value": 9999, "description": "Circles" }
+  },
+  "borderWidth": {
+    "border_thin": { "value": 1, "description": "Default borders" },
+    "border_base": { "value": 1.5, "description": "Input borders" },
+    "border_medium": { "value": 2, "description": "Outline buttons, focus" },
+    "border_thick": { "value": 3, "description": "Active nav indicator" },
+    "border_heavy": { "value": 4, "description": "Accent bars" }
+  }
+}

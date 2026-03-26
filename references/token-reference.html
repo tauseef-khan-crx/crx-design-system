@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Centricity — Tokens Studio Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --blue:#1E67B2; --dark-blue:#0D2949; --teal:#10BAB3; --green:#81BF41;
+  --bg:#F8FAFA; --white:#fff; --border:#E2E8F0;
+  --text:#1F2937; --muted:#6B7280;
+  --mono:'SF Mono','Fira Code','Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans',sans-serif;background:var(--bg);color:var(--text);font-size:13px;line-height:1.5;}
+@media print{body{background:#fff;font-size:11px;}.no-print{display:none!important;}.page{box-shadow:none;margin:0;border-radius:0;}}
+
+.page{max-width:1100px;margin:24px auto;background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 32px rgba(0,0,0,0.08);}
+
+/* Header */
+.header{background:var(--dark-blue);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.header-left .eyebrow{font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+.header-left h1{font-size:24px;font-weight:700;color:#fff;letter-spacing:-0.02em;}
+.header-left h1 span{color:var(--blue);}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;}
+.header-meta{font-size:11px;color:rgba(255,255,255,0.4);}
+.btn-print{background:var(--blue);color:#fff;border:none;padding:8px 20px;border-radius:8px;font-family:'Noto Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;}
+.btn-print:hover{background:#185291;}
+
+/* How To Banner */
+.how-to-bar{background:linear-gradient(135deg,#0D2949,#0D2949);padding:18px 40px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
+.how-step{display:flex;align-items:center;gap:10px;}
+.how-num{width:24px;height:24px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.how-text{font-size:12px;color:rgba(255,255,255,0.7);}
+.how-text strong{color:#fff;}
+.how-sep{color:rgba(255,255,255,0.2);font-size:18px;}
+
+/* Body */
+.body{padding:32px 40px;}
+
+/* Section */
+.section{margin-bottom:36px;}
+.section-title{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+.section-count{font-size:10px;font-weight:600;background:var(--blue);color:#fff;padding:1px 7px;border-radius:8px;letter-spacing:0;text-transform:none;}
+
+/* Grid */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+
+/* Card */
+.card{background:var(--white);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.card-head{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:10px 14px;background:#F8FAFA;border-bottom:1px solid var(--border);}
+
+/* Token rows */
+.token-row{display:grid;align-items:center;padding:7px 14px;border-bottom:1px solid #F3F7F7;font-size:12px;}
+.token-row:last-child{border-bottom:none;}
+.token-row:hover{background:#FAFEFE;}
+.t-name{font-family:var(--mono);font-size:11px;color:#185291;}
+.t-val{font-family:var(--mono);font-size:11px;color:var(--muted);background:#F3F4F6;padding:1px 6px;border-radius:3px;white-space:nowrap;}
+.t-desc{font-size:10px;color:#9CA3AF;font-style:italic;}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:3px;border:1px solid rgba(0,0,0,0.08);flex-shrink:0;}
+.star{color:var(--blue);font-size:10px;margin-left:2px;}
+
+/* Color token rows */
+.color-row{display:flex;align-items:center;gap:8px;padding:6px 14px;border-bottom:1px solid #F3F7F7;font-size:12px;}
+.color-row:last-child{border-bottom:none;}
+.color-row:hover{background:#FAFEFE;}
+
+/* Shadow preview */
+.shadow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.shadow-item{padding:16px;text-align:center;border:1px solid var(--border);border-radius:10px;}
+.shadow-box{width:48px;height:48px;background:var(--white);border-radius:8px;margin:0 auto 10px;}
+.shadow-name{font-family:var(--mono);font-size:11px;color:#185291;margin-bottom:2px;}
+.shadow-use{font-size:10px;color:var(--muted);}
+
+/* Border radius preview */
+.radius-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.radius-item{padding:14px;text-align:center;border:1px solid var(--border);border-radius:8px;background:#F8FAFA;}
+.radius-shape{width:52px;height:32px;background:var(--blue);opacity:0.2;border:2px solid var(--blue);margin:0 auto 8px;}
+.radius-label{font-family:var(--mono);font-size:10px;color:#185291;margin-bottom:2px;}
+.radius-val{font-size:10px;color:var(--muted);}
+
+/* Semantic section */
+.semantic-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.semantic-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.semantic-head{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border);}
+
+/* Type scale preview */
+.type-row{display:flex;align-items:baseline;gap:12px;padding:8px 14px;border-bottom:1px solid #F3F7F7;}
+.type-row:last-child{border-bottom:none;}
+.type-label{font-family:var(--mono);font-size:10px;color:#185291;width:110px;flex-shrink:0;}
+.type-spec{font-family:var(--mono);font-size:10px;color:var(--muted);width:140px;flex-shrink:0;}
+.type-preview{color:var(--dark-blue);font-family:'Montserrat',sans-serif;font-weight:700;line-height:1.1;white-space:nowrap;overflow:hidden;}
+.type-preview.body{font-family:'Noto Sans',sans-serif;font-weight:400;}
+
+/* Footer */
+.footer{background:#F3F7F7;border-top:1px solid var(--border);padding:14px 40px;display:flex;justify-content:space-between;align-items:center;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--blue);}
+.footer-note{font-size:10px;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="eyebrow">Tokens Studio — Complete Token Reference</div>
+    <h1>Centricity <span>Research</span> Design Tokens</h1>
+  </div>
+  <div class="header-right">
+    <div class="header-meta">tokens.json — paste into Tokens Studio</div>
+    <button class="btn-print no-print" onclick="window.print()">🖨 Print / PDF</button>
+  </div>
+</div>
+
+<!-- HOW TO BAR -->
+<div class="how-to-bar">
+  <div class="how-step"><div class="how-num">1</div><div class="how-text">Install <strong>Tokens Studio</strong> plugin in Figma (free)</div></div>
+  <div class="how-sep">→</div>
+  <div class="how-step"><div class="how-num">2</div><div class="how-text">Open plugin → click <strong>Load from file</strong></div></div>
+  <div class="how-sep">→</div>
+  <div class="how-step"><div class="how-num">3</div><div class="how-text">Select <strong>tokens.json</strong> we generated</div></div>
+  <div class="how-sep">→</div>
+  <div class="how-step"><div class="how-num">4</div><div class="how-text">Click <strong>Apply to document</strong> ✅</div></div>
+</div>
+
+<div class="body">
+
+<!-- ══ COLORS ══ -->
+<div class="section">
+  <div class="section-title">Color Tokens <span class="section-count">37 tokens</span></div>
+  <div class="grid-4">
+
+    <!-- BLUE -->
+    <div class="card">
+      <div class="card-head">🔵 Blue — Primary Brand</div>
+      <div class="color-row"><span class="swatch" style="background:#1E67B2"></span><span class="t-name">color.blue.500</span><span class="star">★</span></div>
+      <div style="padding:2px 14px;font-size:10px;font-family:var(--mono);color:var(--muted);">#1E67B2 · Brand primary</div>
+      <div class="color-row"><span class="swatch" style="background:#185291"></span><span class="t-name">color.blue.600</span></div>
+      <div style="padding:2px 14px 6px;font-size:10px;font-family:var(--mono);color:var(--muted);">#185291 · Hover</div>
+      <div class="color-row"><span class="swatch" style="background:#3FC7C1"></span><span class="t-name">color.blue.400</span></div>
+      <div class="color-row"><span class="swatch" style="background:#9FE3E0"></span><span class="t-name">color.blue.200</span></div>
+      <div class="color-row"><span class="swatch" style="background:#CFF1F0"></span><span class="t-name">color.blue.100</span></div>
+      <div class="color-row"><span class="swatch" style="background:#EBF2F9;border-color:#C5D8E8;"></span><span class="t-name">color.blue.50</span></div>
+    </div>
+
+    <!-- DARK BLUE -->
+    <div class="card">
+      <div class="card-head">🌑 Dark Blue — Structure</div>
+      <div class="color-row"><span class="swatch" style="background:#0D2949"></span><span class="t-name">color.dark-blue.800</span><span class="star">★</span></div>
+      <div style="padding:2px 14px;font-size:10px;font-family:var(--mono);color:var(--muted);">#0D2949 · Navigation</div>
+      <div class="color-row"><span class="swatch" style="background:#133E6D"></span><span class="t-name">color.dark-blue.700</span></div>
+      <div class="color-row"><span class="swatch" style="background:#185291"></span><span class="t-name">color.dark-blue.600</span></div>
+      <div class="card-head" style="margin-top:8px;">🩵 Teal — Secondary</div>
+      <div class="color-row"><span class="swatch" style="background:#10BAB3"></span><span class="t-name">color.teal.500</span></div>
+      <div style="padding:2px 14px 6px;font-size:10px;font-family:var(--mono);color:var(--muted);">#10BAB3 · Secondary accent</div>
+      <div class="card-head" style="margin-top:8px;">🟢 Green — Tertiary</div>
+      <div class="color-row"><span class="swatch" style="background:#81BF41"></span><span class="t-name">color.green.500</span></div>
+      <div style="padding:2px 14px 6px;font-size:10px;font-family:var(--mono);color:var(--muted);">#81BF41 · Tertiary accent</div>
+      <div class="card-head" style="margin-top:8px;">🚦 Semantic</div>
+      <div class="color-row"><span class="swatch" style="background:#10B981"></span><span class="t-name">semantic.success</span></div>
+      <div class="color-row"><span class="swatch" style="background:#F59E0B"></span><span class="t-name">semantic.warning</span></div>
+      <div class="color-row"><span class="swatch" style="background:#EF4444"></span><span class="t-name">semantic.error</span></div>
+      <div class="color-row"><span class="swatch" style="background:#3B82F6"></span><span class="t-name">semantic.info</span></div>
+    </div>
+
+    <!-- NEUTRAL -->
+    <div class="card">
+      <div class="card-head">⚪ Neutral — Text & UI</div>
+      <div class="color-row"><span class="swatch" style="background:#111827"></span><span class="t-name">color.neutral.900</span></div>
+      <div class="color-row"><span class="swatch" style="background:#1F2937"></span><span class="t-name">color.neutral.800</span></div>
+      <div class="color-row"><span class="swatch" style="background:#374151"></span><span class="t-name">color.neutral.700</span></div>
+      <div class="color-row"><span class="swatch" style="background:#4B5563"></span><span class="t-name">color.neutral.600</span></div>
+      <div class="color-row"><span class="swatch" style="background:#6B7280"></span><span class="t-name">color.neutral.500</span></div>
+      <div class="color-row"><span class="swatch" style="background:#9CA3AF"></span><span class="t-name">color.neutral.400</span></div>
+      <div class="color-row"><span class="swatch" style="background:#D1D5DB"></span><span class="t-name">color.neutral.300</span></div>
+      <div class="color-row"><span class="swatch" style="background:#E5E7EB"></span><span class="t-name">color.neutral.200</span></div>
+      <div class="color-row"><span class="swatch" style="background:#F3F4F6;border-color:#ddd;"></span><span class="t-name">color.neutral.100</span></div>
+      <div class="color-row"><span class="swatch" style="background:#F9FAFB;border-color:#ddd;"></span><span class="t-name">color.neutral.50</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ TYPOGRAPHY ══ -->
+<div class="section">
+  <div class="section-title">Typography Tokens <span class="section-count">13 styles</span></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">Font Families, Sizes & Weights</div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontFamilies.title</span><span class="t-val">Montserrat</span><span class="t-desc">Headings, nav, btns</span>
+      </div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontFamilies.body</span><span class="t-val">Noto Sans</span><span class="t-desc">Body, forms</span>
+      </div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontWeights.bold</span><span class="t-val">700</span><span class="t-desc">Display, H1–H2</span>
+      </div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontWeights.medium</span><span class="t-val">500</span><span class="t-desc">H3–H5</span>
+      </div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontWeights.semibold</span><span class="t-val">600</span><span class="t-desc">Labels, links</span>
+      </div>
+      <div class="token-row" style="grid-template-columns:1.5fr 1fr 1fr;">
+        <span class="t-name">fontWeights.regular</span><span class="t-val">400</span><span class="t-desc">Body copy</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">Type Scale</div>
+      <div class="type-row"><span class="type-label">fontSize.4xl</span><span class="type-spec">60px · Bold</span><span class="type-preview" style="font-size:28px;">Display</span></div>
+      <div class="type-row"><span class="type-label">fontSize.3xl</span><span class="type-spec">48px · Bold</span><span class="type-preview" style="font-size:24px;">H1 Heading</span></div>
+      <div class="type-row"><span class="type-label">fontSize.2xl</span><span class="type-spec">36px · Bold</span><span class="type-preview" style="font-size:20px;">H2 Section</span></div>
+      <div class="type-row"><span class="type-label">fontSize.xl</span><span class="type-spec">28px · Medium</span><span class="type-preview" style="font-size:17px;">H3 Subhead</span></div>
+      <div class="type-row"><span class="type-label">fontSize.lg</span><span class="type-spec">22px · Medium</span><span class="type-preview" style="font-size:15px;">H4 Feature</span></div>
+      <div class="type-row"><span class="type-label">fontSize.base</span><span class="type-spec">15px · Regular</span><span class="type-preview body" style="font-size:13px;">Body default text</span></div>
+      <div class="type-row"><span class="type-label">fontSize.sm</span><span class="type-spec">13px · Regular</span><span class="type-preview body" style="font-size:12px;">Small body / meta</span></div>
+      <div class="type-row"><span class="type-label">fontSize.xs</span><span class="type-spec">11px · Medium</span><span class="type-preview body" style="font-size:11px;">Caption / legal</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SHADOWS ══ -->
+<div class="section">
+  <div class="section-title">Shadow Tokens <span class="section-count">10 tokens</span></div>
+  <div class="shadow-grid">
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 1px 2px rgba(0,0,0,0.05);"></div><div class="shadow-name">boxShadow.xs</div><div class="shadow-use">Cards at rest</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 2px 4px rgba(0,0,0,0.06);"></div><div class="shadow-name">boxShadow.sm</div><div class="shadow-use">Dropdowns</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 4px 12px rgba(0,0,0,0.08);"></div><div class="shadow-name">boxShadow.md</div><div class="shadow-use">Hover cards</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 8px 24px rgba(0,0,0,0.10);"></div><div class="shadow-name">boxShadow.lg</div><div class="shadow-use">Modals</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 20px 48px rgba(0,0,0,0.12);"></div><div class="shadow-name">boxShadow.xl</div><div class="shadow-use">Overlays</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 4px 12px rgba(30,103,178,0.35);"></div><div class="shadow-name">boxShadow.blue-glow</div><div class="shadow-use">Primary btn hover</div></div>
+    <div class="shadow-item"><div class="shadow-box" style="box-shadow:0 0 0 3px rgba(30,103,178,0.25);"></div><div class="shadow-name">boxShadow.focus-blue</div><div class="shadow-use">Input focus ring</div></div>
+  </div>
+</div>
+
+<!-- ══ BORDER RADIUS ══ -->
+<div class="section">
+  <div class="section-title">Border Radius Tokens <span class="section-count">9 tokens</span></div>
+  <div class="radius-grid">
+    <div class="radius-item"><div class="radius-shape" style="border-radius:4px;"></div><div class="radius-label">borderRadius.xs</div><div class="radius-val">4px · Tags</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:6px;"></div><div class="radius-label">borderRadius.sm</div><div class="radius-val">6px · Inputs</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:10px;"></div><div class="radius-label">borderRadius.md</div><div class="radius-val">10px · Cards</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:16px;"></div><div class="radius-label">borderRadius.lg</div><div class="radius-val">16px · Large cards</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:24px;"></div><div class="radius-label">borderRadius.xl</div><div class="radius-val">24px · Hero</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:32px;"></div><div class="radius-label">borderRadius.2xl</div><div class="radius-val">32px · Modals</div></div>
+    <div class="radius-item"><div class="radius-shape" style="border-radius:999px;width:52px;height:28px;"></div><div class="radius-label">borderRadius.pill</div><div class="radius-val">999 · Pill shapes</div></div>
+    <div class="radius-item"><div style="width:32px;height:32px;background:var(--blue);opacity:0.2;border:2px solid var(--blue);border-radius:50%;margin:0 auto 8px;"></div><div class="radius-label">borderRadius.full</div><div class="radius-val">9999 · Circles</div></div>
+  </div>
+</div>
+
+<!-- ══ BORDER WIDTH + SPACING ══ -->
+<div class="section">
+  <div class="section-title">Border Width & Spacing <span class="section-count">19 tokens</span></div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">Border Width</div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.none</span><span class="t-val">0</span><span class="t-desc">No border</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.thin</span><span class="t-val">1px</span><span class="t-desc">Default border</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.base</span><span class="t-val">1.5px</span><span class="t-desc">Input borders</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.medium</span><span class="t-val">2px</span><span class="t-desc">Outline buttons</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.thick</span><span class="t-val">3px</span><span class="t-desc">Active nav</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.5fr 1fr;"><span class="t-name">borderWidth.heavy</span><span class="t-val">4px</span><span class="t-desc">Accent bars</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head">Spacing Scale</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.1</span><span class="t-val">4px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.2</span><span class="t-val">8px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.3</span><span class="t-val">12px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.4</span><span class="t-val">16px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.5</span><span class="t-val">20px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.6</span><span class="t-val">24px</span></div>
+        </div>
+        <div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.8</span><span class="t-val">32px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.10</span><span class="t-val">40px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.12</span><span class="t-val">48px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.16</span><span class="t-val">64px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.20</span><span class="t-val">80px</span></div>
+          <div class="token-row" style="grid-template-columns:1fr 0.6fr;"><span class="t-name">spacing.24</span><span class="t-val">96px</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SIZING + OPACITY ══ -->
+<div class="section">
+  <div class="section-title">Sizing, Opacity & Transitions <span class="section-count">26 tokens</span></div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-head">Sizing — Components</div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.nav-h</span><span class="t-val">60px</span><span class="t-desc">Navbar height</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.input-h</span><span class="t-val">42px</span><span class="t-desc">Input height</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.btn-h-xl</span><span class="t-val">58px</span><span class="t-desc">Button XL</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.btn-h-lg</span><span class="t-val">50px</span><span class="t-desc">Button LG</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.btn-h-md</span><span class="t-val">42px</span><span class="t-desc">Button MD ★</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.btn-h-sm</span><span class="t-val">34px</span><span class="t-desc">Button SM</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.icon-lg</span><span class="t-val">24px</span><span class="t-desc">Default icon</span></div>
+      <div class="token-row" style="grid-template-columns:1.3fr 0.6fr 1fr;"><span class="t-name">sizing.avatar-md</span><span class="t-val">40px</span><span class="t-desc">Profile avatar</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head">Opacity Scale</div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.10</span><span class="t-val">10%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.20</span><span class="t-val">20%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.40</span><span class="t-val">40%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.60</span><span class="t-val">60%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.75</span><span class="t-val">75%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.90</span><span class="t-val">90%</span></div>
+      <div class="token-row" style="grid-template-columns:1.2fr 0.6fr;"><span class="t-name">opacity.100</span><span class="t-val">100%</span></div>
+    </div>
+    <div class="card">
+      <div class="card-head">Transitions</div>
+      <div class="token-row" style="grid-template-columns:1fr 1fr;"><span class="t-name">transition.fast</span><span class="t-val">150ms ease</span></div>
+      <div style="padding:1px 14px 6px;font-size:10px;color:#9CA3AF;font-style:italic;">Hover states, toggles</div>
+      <div class="token-row" style="grid-template-columns:1fr 1fr;"><span class="t-name">transition.base</span><span class="t-val">250ms ease</span></div>
+      <div style="padding:1px 14px 6px;font-size:10px;color:#9CA3AF;font-style:italic;">Standard transitions</div>
+      <div class="token-row" style="grid-template-columns:1fr 1fr;"><span class="t-name">transition.slow</span><span class="t-val">400ms ease</span></div>
+      <div style="padding:1px 14px 6px;font-size:10px;color:#9CA3AF;font-style:italic;">Page transitions</div>
+      <div class="token-row" style="grid-template-columns:1fr 1fr;"><span class="t-name">transition.spring</span><span class="t-val">300ms spring</span></div>
+      <div style="padding:1px 14px 6px;font-size:10px;color:#9CA3AF;font-style:italic;">Bouncy micro-interactions</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOTAL SUMMARY ══ -->
+<div class="section">
+  <div class="section-title">Token Summary</div>
+  <div class="grid-4">
+    <div style="background:#EBF2F9;border:1px solid #C5D8E8;border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:32px;font-weight:700;color:var(--blue);line-height:1;">37</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Color Tokens</div>
+    </div>
+    <div style="background:#EBF2F9;border:1px solid #C5D8E8;border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:32px;font-weight:700;color:var(--blue);line-height:1;">13</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Text Styles</div>
+    </div>
+    <div style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:32px;font-weight:700;color:var(--dark-blue);line-height:1;">10</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Shadow Tokens</div>
+    </div>
+    <div style="background:#EBF2F9;border:1px solid #C5D8E8;border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:32px;font-weight:700;color:var(--blue);line-height:1;">75+</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600;">Total Tokens</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <div class="footer-brand">Centricity Research — Design Tokens v2.0</div>
+  <div class="footer-note">Load tokens.json into Tokens Studio plugin in Figma</div>
+  <div class="footer-note">centricityresearch.com</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{
+  "shadows": {
+    "shadow_xs": {
+      "x": 0,
+      "y": 1,
+      "blur": 2,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.05)",
+      "description": "Cards at rest"
+    },
+    "shadow_sm": {
+      "x": 0,
+      "y": 2,
+      "blur": 4,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.06)",
+      "description": "Dropdowns, tooltips"
+    },
+    "shadow_md": {
+      "x": 0,
+      "y": 4,
+      "blur": 12,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.08)",
+      "description": "Hover cards"
+    },
+    "shadow_lg": {
+      "x": 0,
+      "y": 8,
+      "blur": 24,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.10)",
+      "description": "Modals, popovers"
+    },
+    "shadow_xl": {
+      "x": 0,
+      "y": 20,
+      "blur": 48,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.12)",
+      "description": "Overlays"
+    },
+    "shadow_blue_glow": {
+      "x": 0,
+      "y": 4,
+      "blur": 12,
+      "spread": 0,
+      "color": "rgba(30,103,178,0.35)",
+      "description": "Primary button hover glow"
+    },
+    "shadow_focus_blue": {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 3,
+      "color": "rgba(30,103,178,0.25)",
+      "description": "Input focus ring"
+    },
+    "shadow_focus_error": {
+      "x": 0,
+      "y": 0,
+      "blur": 0,
+      "spread": 3,
+      "color": "rgba(239,68,68,0.20)",
+      "description": "Error input focus ring"
+    },
+    "shadow_inner": {
+      "type": "inset",
+      "x": 0,
+      "y": 2,
+      "blur": 4,
+      "spread": 0,
+      "color": "rgba(0,0,0,0.06)",
+      "description": "Inset inputs"
+    }
+  },
+  "transitions": {
+    "transition_fast": {
+      "duration": "150ms",
+      "easing": "ease",
+      "description": "Hover states"
+    },
+    "transition_base": {
+      "duration": "250ms",
+      "easing": "ease",
+      "description": "Standard transitions"
+    },
+    "transition_slow": {
+      "duration": "400ms",
+      "easing": "ease",
+      "description": "Page transitions"
+    },
+    "transition_spring": {
+      "duration": "300ms",
+      "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "description": "Bouncy interactions"
+    }
+  },
+  "opacity": {
+    "opacity_0": 0,
+    "opacity_10": 0.10,
+    "opacity_20": 0.20,
+    "opacity_40": 0.40,
+    "opacity_60": 0.60,
+    "opacity_75": 0.75,
+    "opacity_90": 0.90,
+    "opacity_100": 1
+  }
+}
